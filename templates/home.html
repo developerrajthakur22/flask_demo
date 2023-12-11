@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Raj Career Web Page</title>
+</head>
+<style>
+  body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+  }
+
+  header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 20px;
+  }
+
+  .about-section {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      padding: 50px;
+  }
+
+  .about-section img {
+      max-width: 300px;
+      border-radius: 10px;
+  }
+
+  .about-content {
+      max-width: 500px;
+  }
+
+  .open-position {
+      text-align: center;
+      padding: 50px;
+  }
+
+  button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  button:hover {
+      background-color: #555;
+  }
+ 
+
+</style>
+<body>
+    <header>
+        <h1>Raj Career Web Page</h1>
+    </header>
+    <section class="about-section">
+        <img src="https://www.marketingmind.in/wp-content/uploads/2019/12/job-portal-1.jpg" alt="Company Image">
+        <div class="about-content">
+            <h2>About Us</h2>
+            <p>This is the about section of Raj Career. We are dedicated to providing excellent career opportunities and services.</p>
+        </div>
+    </section>
+    <section class="open-position">
+        <h2>Open Positions</h2>
+        <div>
+          {% for job in jobs %}
+             {% include 'jobItem.html' %}
+          {% endfor %}
+        </div>
+        <button>Contact Us</button>
+    </section>
+</body>
+</html>
